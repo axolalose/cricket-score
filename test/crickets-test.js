@@ -7,8 +7,8 @@ describe('cricket-score', function(){
     const cricketScore = cricket();
 
     it('should be able to show added Wickets', function(){
-        cricketScore.Added('wickets');
-        assert.equal( cricketScore.Added('wickets'));
+        cricketScore.Added('-1-1-1-');
+        assert.equal(0, cricketScore.getTotal());
     });
 
     it('should be able to show new scores', function(){

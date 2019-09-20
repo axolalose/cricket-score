@@ -7,8 +7,10 @@
         <link rel="stylesheet" href="CSS/simple-grid.css">
 
     <title>Document</title>
+
 </head>
 <body>
+    <img src="/CSS/download.jpeg" alt="">
     <div class="row">
         <div class="countainer">
             <div class="heading">
@@ -17,7 +19,13 @@
             
                 <form action="/action" method="POST">
                 <lable  class="">
-                    <input type="radio" class="radios" name="action" value="applyScore" >
+                 <span>
+                     Total Score:
+                    <input type="text" class="scoreBox" name="scores" >
+                </span>
+
+    <div class="Radios">
+   <input type="radio" class="radios" name="action" value="applyScore" >
                     <span class="label-body">SCORE</span>
                 </span>
 
@@ -34,13 +42,15 @@
 
                  </label>
                 </form>
-            <form action="/actions" method="GET">
+    </div>
+                 
+            {{!-- <form action="/actions" method="GET"> --}}
             <div class="grand">
                 <span>
                     <input type="submit" class="grandTotal" value="Grand Total" >
                 </span>
             </div>
-            </form>
+            {{!-- </form> --}}
             
 
                             

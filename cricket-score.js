@@ -34,11 +34,11 @@ module.exports = function cricketScore(){
         })
 
     }
-    function getTotal(){
+    function getTotal(type){
         let total = 0;
         for(let cricket = 0; cricket < addedScore.length; cricket++){
             const winner = addedScore[cricket];
-            if(action.type === type){
+            if(winner.type === type){
                 total += winner.winnigTeam;
             }
         }
@@ -47,8 +47,30 @@ module.exports = function cricketScore(){
     }
  
         function grandTotal (){
-            
+
             return getTotal("scoring") + getTotal("wicketer") + getTotal("players"); 
+        }
+
+        function seeScore(Score){
+            var splitScore = Score.split(',');
+            var total = 0;
+             var wickets = 0; 
+             var score = 0;
+             var playersAvail = 0;
+             for(let ball = 0; ball < addedScore.length; ball++){
+                 const Score = addedScore[ball];
+                 if(Score.wickets === 'scoreBoard'){
+                   return 'W' + wickets;
+                 }else if(Score.score === 'scoreBoard'){
+                     return '1' + score;
+                 }else(Score.playersAvail === 'scoreBoard')
+                     return '1' + playersAvail;
+                // else (Score.total === 'scoreBroad'){
+                //     return "";
+                //  }
+             }
+
+    
         }
 
 
@@ -58,6 +80,7 @@ module.exports = function cricketScore(){
         gettingScores,
         Added,
         getTotal,
-        grandTotal
+        grandTotal,
+        seeScore
     }
 }
